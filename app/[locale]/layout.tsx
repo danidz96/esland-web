@@ -3,6 +3,7 @@ import { Jura, Onest } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/ui/Header";
+import Footer from "@/ui/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -54,6 +55,7 @@ export default function RootLayout({
         <Header />
         {children}
       </body>
+      <Footer />
     </html>
   );
 }
