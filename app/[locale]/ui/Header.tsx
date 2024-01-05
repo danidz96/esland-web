@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
-import Button from "./Button";
-import Logo from "./Logo";
+import Button from "@/ui/Button";
+import Logo from "@/ui/Logo";
+import Link from "next/link";
 
 export default function Header() {
   const t = useTranslations("");
@@ -15,12 +16,12 @@ export default function Header() {
 
         {/* <!-- Menú de navegación para pantallas grandes --> */}
         <nav className="hidden md:flex flex-grow basis-0 w-full gap-x-6 text-lg md:justify-center font-medium">
-          <a className="hover:underline" href="/info">
+          <Link className="hover:underline" href="/info" prefetch={false}>
             {t("HEADER_1")}
-          </a>
-          <a className="hover:underline" href="/archivo">
+          </Link>
+          <Link className="hover:underline" href="/archivo" prefetch={false}>
             {t("HEADER_2")}
-          </a>
+          </Link>
         </nav>
 
         {/* <!-- Botón de menú para pantallas pequeñas --> */}
@@ -46,12 +47,12 @@ export default function Header() {
         id="mobile-menu"
         className="bg-black/80 backdrop-blur-3xl hidden w-full flex-col items-center text-center text-2xl fixed top-0 left-0 right-0 h-dvh place-content-center"
       >
-        <a className="my-4 hover:underline" href="/info">
+        <Link className="my-4 hover:underline" href="/info" prefetch={false}>
           {t("HEADER_1")}
-        </a>
-        <a className="my-4 hover:underline" href="/archivo">
+        </Link>
+        <Link className="my-4 hover:underline" href="/archivo" prefetch={false}>
           {t("HEADER_2")}
-        </a>
+        </Link>
         <Button
           className="my-4 whitespace-nowrap text-center lg:hidden lg:text-base"
           url="https://www.youtube.com/watch?v=O43x26hiolw"
