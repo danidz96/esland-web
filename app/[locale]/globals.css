@@ -7,8 +7,8 @@
 }
 
 html {
-  font-family: "Onest Variable", system-ui, sans-serif;
   background: #151a36;
+  font-family: var(--font-onest), system-ui, sans-serif;
 }
 
 p {

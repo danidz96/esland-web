@@ -9,9 +9,9 @@ export default function Header() {
     <header id="header-nav" className="fixed top-0 z-50 w-full px-6 py-2">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         <div className="flex flex-grow basis-0">
-          <a href="/">
+          <Link href="/">
             <Logo className="h-auto w-10" />
-          </a>
+          </Link>
         </div>
 
         {/* <!-- Menú de navegación para pantallas grandes --> */}

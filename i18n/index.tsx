@@ -10,5 +10,8 @@ export default getRequestConfig(async ({ locale }) => {
 
   return {
     messages: (await import(`../i18n/${locale}.json`)).default,
+    defaultTranslationValues: {
+      strong: (chunks) => <strong>{chunks}</strong>,
+    },
   };
 });
