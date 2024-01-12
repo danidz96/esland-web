@@ -36,7 +36,7 @@ export default function Video() {
 
           <Button
             target="_self"
-            className="text-sky-900 animate-fade-up bg-white"
+            className="text-sky-950 animate-fade-up bg-white"
             url="/vota"
           >
             {t("VIDEO_BUTTON")}
