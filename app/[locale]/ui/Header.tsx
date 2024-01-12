@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import Button from "@/ui/Button";
 import Logo from "@/ui/Logo";
-import Link from "next/link";
+import { Link } from "i18n/navigation";
 
 export default function Header() {
   const t = useTranslations("");
