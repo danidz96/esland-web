@@ -49,8 +49,11 @@ export default function RootLayout({
   params: { locale: Locale };
 }) {
   return (
-    <html className={`${onest.variable} ${jura.variable} ${tomaso.variable}`}>
-      <head lang={locale}>
+    <html
+      lang={locale}
+      className={`${onest.variable} ${jura.variable} ${tomaso.variable}`}
+    >
+      <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <meta name="robots" content="nofollow, noindex" />
