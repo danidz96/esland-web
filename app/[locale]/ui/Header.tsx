@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import Button from "@/ui/Button";
 import Logo from "@/ui/Logo";
+import LanguageSelector from "@/ui/LanguageSelector";
 import { Link } from "i18n/navigation";
 
 export default function Header() {
@@ -22,6 +23,7 @@ export default function Header() {
           <Link className="hover:underline" href="/archivo" prefetch={false}>
             {t("HEADER_ARCHIVE")}
           </Link>
+          <LanguageSelector />
         </nav>
 
         {/* <!-- Botón de menú para pantallas pequeñas --> */}
@@ -53,6 +55,7 @@ export default function Header() {
         <Link className="my-4 hover:underline" href="/archivo" prefetch={false}>
           {t("HEADER_ARCHIVE")}
         </Link>
+        <LanguageSelector />
         <Button
           className="my-4 whitespace-nowrap text-center lg:hidden lg:text-base"
           url="https://www.youtube.com/watch?v=O43x26hiolw"
