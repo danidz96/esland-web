@@ -26,7 +26,7 @@ export default function Video() {
             <span>D</span>
           </h1>
           <p className="text-xl lg:text-2xl text-center text-pretty font-jura">
-            {t("VIDEO_SUBTITLE")}
+            {t("HERO_SUBTITLE")}
           </p>
         </section>
         <Button

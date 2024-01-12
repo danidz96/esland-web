@@ -17,10 +17,10 @@ export default function Header() {
         {/* <!-- Menú de navegación para pantallas grandes --> */}
         <nav className="hidden md:flex flex-grow basis-0 w-full gap-x-6 text-lg md:justify-center font-medium">
           <Link className="hover:underline" href="/info" prefetch={false}>
-            {t("HEADER_1")}
+            {t("HEADER_INFO")}
           </Link>
           <Link className="hover:underline" href="/archivo" prefetch={false}>
-            {t("HEADER_2")}
+            {t("HEADER_ARCHIVE")}
           </Link>
         </nav>
 
@@ -48,10 +48,10 @@ export default function Header() {
         className="bg-black/80 backdrop-blur-3xl hidden w-full flex-col items-center text-center text-2xl fixed top-0 left-0 right-0 h-dvh place-content-center"
       >
         <Link className="my-4 hover:underline" href="/info" prefetch={false}>
-          {t("HEADER_1")}
+          {t("HEADER_INFO")}
         </Link>
         <Link className="my-4 hover:underline" href="/archivo" prefetch={false}>
-          {t("HEADER_2")}
+          {t("HEADER_ARCHIVE")}
         </Link>
         <Button
           className="my-4 whitespace-nowrap text-center lg:hidden lg:text-base"
