@@ -2,6 +2,19 @@ import { useTranslations } from "next-intl";
 import HeroContainer from "@/ui/HeroContainer";
 import InfoKitPrensa from "@/ui/InfoKitPrensa";
 import Image from "next/image";
+import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params: { locale },
+}): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: "" });
+
+  return {
+    title: t("SEO.INFO_TITLE"),
+    description: t("SEO.INFO_DESCRIPTION"),
+  };
+}
 
 export default function Info() {
   const t = useTranslations("");
