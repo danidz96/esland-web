@@ -28,6 +28,7 @@ const onest = Onest({
   subsets: ["latin"],
   variable: "--font-onest",
   display: "swap",
+  fallback: ["sans-serif"],
 });
 
 const tomaso = localFont({
