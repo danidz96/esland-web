@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "photoswipe/style.css";
 import Button from "@/ui/Button";
 import editionsInfo from "@/data/meta-gallery.json";
@@ -22,7 +22,10 @@ export default function Gallery({
 }: Props) {
   const offset = 10;
   const edictionIndex = Number(edition) - 1;
-  const photos = editionsInfo[edictionIndex].slice(0, offset);
+  const [photos, setPhotos] = useState(() =>
+    editionsInfo[edictionIndex].slice(0, offset)
+  );
+  const [showGalleryButton, setShowGalleryButton] = useState<boolean>(true);
 
   useEffect(() => {
     let lightbox: any = new PhotoSwipeLightbox({
@@ -37,6 +40,14 @@ export default function Gallery({
       lightbox = null;
     };
   }, []);
+
+  const getData = async () => {
+    const res = await fetch(`/api/gallery?edition=1&offset=${offset}`);
+    const photosRes = await res.json();
+
+    setPhotos([...photos, ...photosRes]);
+    setShowGalleryButton(false);
+  };
 
   return (
     <>
@@ -85,9 +96,11 @@ export default function Gallery({
           ))}
         </Masonry>
 
-        <div className="text-center mx-auto">
-          <Button url="#">{buttonText}</Button>
-        </div>
+        {showGalleryButton && (
+          <div className="text-center mx-auto">
+            <Button onClick={getData}>{buttonText}</Button>
+          </div>
+        )}
       </section>
       <style jsx global>
         {`

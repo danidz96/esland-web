@@ -4,12 +4,19 @@ import styles from "./Button.module.css";
 interface Props {
   className?: string;
   target?: string;
-  url: string;
+  url?: string;
   children?: React.ReactNode;
+  onClick?: () => void;
 }
 
-export default function Button({ url, target, className, children }: Props) {
-  return (
+export default function Button({
+  url,
+  target,
+  className,
+  children,
+  onClick,
+}: Props) {
+  return url ? (
     <Link
       href={url}
       target={`${target ?? "_blank"}`}
@@ -18,5 +25,12 @@ export default function Button({ url, target, className, children }: Props) {
     >
       {children}
     </Link>
+  ) : (
+    <button
+      className={`${className} ${styles.button} w-fit lg:text-2xl font-medium no-underline px-5 py-3 border border-solid border-white rounded-full uppercase`}
+      onClick={onClick}
+    >
+      {children}
+    </button>
   );
 }
