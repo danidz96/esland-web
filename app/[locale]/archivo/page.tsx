@@ -1,6 +1,7 @@
 import Button from "@/ui/Button";
 import HeroContainer from "@/ui/HeroContainer";
 import Numbers from "@/ui/Numbers";
+import Gallery from "@/ui/Gallery";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -36,7 +37,12 @@ export default function Archivo() {
 
       <main className="pb-24">
         {/* <Palmares edicion={edicion} /> */}
-        {/* <Gallery i18n={i18n} edicion="1" /> */}
+        <Gallery
+          edition="1"
+          title={t("INFO.GALLERY_TITLE")}
+          subTitle={t("INFO.GALLERY_TEXT")}
+          buttonText={t("INFO.GALLERY_BUTTON_TEXT")}
+        />
         <Numbers />
       </main>
     </>
